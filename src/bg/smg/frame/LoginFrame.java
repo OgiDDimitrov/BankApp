@@ -1,5 +1,7 @@
 package bg.smg.frame;
 
+import bg.smg.model.User;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +14,8 @@ public class LoginFrame extends JFrame implements ActionListener {
     private JPasswordField passwordPwdF;
     private JButton fpBtn;
     private JButton signUpBtn;
+
+
 
     public LoginFrame(){
 
@@ -51,8 +55,9 @@ public class LoginFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String username = usernameTxF.getText();
         String password = passwordPwdF.getPassword().toString();
+        User user = new User();
         if(username.equals("nmborisova") && password.equals("123456")) {
-            new MainFrame();
+            new MainFrame(user);
             setVisible(false);
         } else {
 
